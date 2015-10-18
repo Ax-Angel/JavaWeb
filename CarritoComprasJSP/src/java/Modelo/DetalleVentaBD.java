@@ -35,4 +35,17 @@ public class DetalleVentaBD {
             cl.setDouble(3, varDetalle.getCantidad());
             //El descuento
             cl.setDouble(4, varDetalle.getDescuento());
+             //Ejecutamos la sentencia y si nos devuelve el valor de 1 es porque
+            //registro de forma correcta los datos
+            rpta = cl.executeUpdate() == 1 ? true : false;
+            Conexion.cerrarCall(cl);
+        } catch (SQLException e) {
+            e.printStackTrace();
+            Conexion.cerrarCall(cl);
+        } catch (Exception e) {
+            e.printStackTrace();
+            Conexion.cerrarCall(cl);
+        }
+        return rpta;
+    }
 }
