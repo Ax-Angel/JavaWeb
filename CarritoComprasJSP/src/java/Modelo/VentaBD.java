@@ -81,4 +81,8 @@ public class VentaBD {
         }
         return rpta;
     }
+     //Metodo utilizado para obtener todos las ventas de nuestra base de datos
+    public static synchronized ArrayList<DetalleVenta> obtenerVentas() {
+        //El array que contendra todos nuestros productos
+        ArrayList<DetalleVenta> lista = new ArrayList<DetalleVenta>();
 }
