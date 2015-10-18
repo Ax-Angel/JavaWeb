@@ -11,6 +11,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Types;
 import java.util.ArrayList;
+import java.security.Timestamp;
 
 /**
  *
@@ -103,7 +104,7 @@ cn = Conexion.getConexion();
                 DetalleVenta det=new DetalleVenta();
                 ven.setCodigoVenta(rs.getInt("CodigoVenta"));
                 ven.setCliente(rs.getString("Cliente"));
-                ven.setFecha(rs.getTimestamp("Fecha"));
+               // ven.setFecha(rs.getTimestamp("Fecha"));
                 pro.setCodigoProducto(rs.getInt("CodigoProducto"));
                 pro.setNombre(rs.getString("Nombre"));
                 pro.setPrecio(rs.getDouble("Precio"));
