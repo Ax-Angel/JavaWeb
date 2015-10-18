@@ -37,4 +37,17 @@ public class ProductoBD {
             //almacenado le decimos que es OUT y el del tipo Integer en Java
             cl.registerOutParameter(1, Types.INTEGER);
             //El siguiente parametro del procedimiento almacenado es el nombre
+            cl.setString(2, varproducto.getNombre());
+            //Y por ultimo el precio 
+            cl.setDouble(3, varproducto.getPrecio());
+            //Ejecutamos la sentencia y si nos devuelve el valor de 1 es porque
+            //registro de forma correcta los datos
+            rpta = cl.executeUpdate() == 1 ? true : false;
+            if (rpta) {
+                //Confirmamos la transaccion
+                cn.commit();
+            } else {
+                //Negamos la transaccion
+                Conexion.deshacerCambios(cn);
+            }
 }
