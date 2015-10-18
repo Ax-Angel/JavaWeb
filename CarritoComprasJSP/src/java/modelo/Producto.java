@@ -3,6 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+
 package modelo;
 
 /**
@@ -10,56 +11,49 @@ package modelo;
  * @author -Angel
  */
 public class Producto {
+    
     private int id;
     private String nombre;
+    private String tipo;
     private int precio;
     
     public Producto(){
         id = 0;
         nombre = "";
+        tipo = "";
         precio = 0;
     }
 
-    /**
-     * @return the id
-     */
     public int getId() {
         return id;
     }
 
-    /**
-     * @param id the id to set
-     */
     public void setId(int id) {
         this.id = id;
     }
 
-    /**
-     * @return the nombre
-     */
     public String getNombre() {
         return nombre;
     }
 
-    /**
-     * @param nombre the nombre to set
-     */
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
 
-    /**
-     * @return the precio
-     */
+    public String getTipo() {
+        return tipo;
+    }
+
+    public void setTipo(String tipo) {
+        this.tipo = tipo;
+    }
+
     public int getPrecio() {
         return precio;
     }
 
-    /**
-     * @param precio the precio to set
-     */
     public void setPrecio(int precio) {
         this.precio = precio;
     }
-
+    
 }

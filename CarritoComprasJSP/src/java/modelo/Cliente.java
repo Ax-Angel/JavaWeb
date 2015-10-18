@@ -3,50 +3,44 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+
 package modelo;
 
 import java.util.ArrayList;
+import modelo.Producto;
 
 /**
  *
- * @author -Angel
+ * @author Seba
  */
 public class Cliente {
-    private String RFC;
+    
+    private String rut;
     private String nombre;
     
-     public static ArrayList<Producto> productos = new ArrayList<Producto>();
+    public static ArrayList<Producto> productos = new ArrayList<Producto>();
     
     public Cliente(){
-        RFC = "";
+        rut = "";
         nombre = "";
     }
 
-    /**
-     * @return the RFC
-     */
-    public String getRFC() {
-        return RFC;
+    public String getRut() {
+        return rut;
     }
 
-    /**
-     * @param RFC the RFC to set
-     */
-    public void setRFC(String RFC) {
-        this.RFC = RFC;
+    public void setRut(String rut) {
+        this.rut = rut;
     }
 
-    /**
-     * @return the nombre
-     */
     public String getNombre() {
         return nombre;
     }
 
-    /**
-     * @param nombre the nombre to set
-     */
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
+    
+    
+    
 }
