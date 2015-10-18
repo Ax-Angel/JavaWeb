@@ -17,5 +17,10 @@ import java.sql.DriverManager;
 import java.sql.ResultSet;
 
 public class Conexion {
-    
+    private static String url = "jdbc:mysql://localhost/javaweb";
+    //El usuario de la base de datos
+    private static String user = "root";
+    //La clave del usuario de la base de datos
+    private static String password = "clave";
+    //Metodo para obtener la conexion con la base de datos
 }
