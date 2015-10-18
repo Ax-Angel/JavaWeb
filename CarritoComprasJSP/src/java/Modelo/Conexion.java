@@ -38,4 +38,21 @@ public class Conexion {
         }
     }
     
+    //Metodo utilizado para cerrar el callablestatemente
+    public static synchronized void cerrarCall(CallableStatement cl) {
+        try{cl.close();}catch(Exception e){}
+    }
+    //Metodo utilizado para cerrar el resulset de datos
+    public static synchronized void cerrarConexion(ResultSet rs) {
+        try{rs.close();} catch (Exception e) {}
+    }
+    //Metodo utilizado para cerrar la conexion
+    public static synchronized void cerrarConexion(Connection cn) {
+        try{cn.close();} catch (Exception e) {}
+    }
+    //Metodo utilizado para deshacer los cambios en la base de datos
+    public static synchronized void deshacerCambios(Connection cn) {
+        try{cn.rollback();}catch (Exception e){}
+    }
+    
 }
