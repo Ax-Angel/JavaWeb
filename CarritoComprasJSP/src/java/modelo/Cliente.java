@@ -21,4 +21,32 @@ public class Cliente {
         RFC = "";
         nombre = "";
     }
+
+    /**
+     * @return the RFC
+     */
+    public String getRFC() {
+        return RFC;
+    }
+
+    /**
+     * @param RFC the RFC to set
+     */
+    public void setRFC(String RFC) {
+        this.RFC = RFC;
+    }
+
+    /**
+     * @return the nombre
+     */
+    public String getNombre() {
+        return nombre;
+    }
+
+    /**
+     * @param nombre the nombre to set
+     */
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
 }
