@@ -27,15 +27,14 @@ public class Conexion {
             Class.forName("com.mysql.jdbc.Driver").newInstance();
             conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/javaweb","root",null);
             state = conn.createStatement();
-        }catch(Exception e){
-            e.printStackTrace();
+        }catch(ClassNotFoundException | InstantiationException | IllegalAccessException | SQLException e){
         }
     }
     
     public ArrayList<Producto> mostrarProductos() throws Exception{
         conexion();
-        ArrayList<Producto> productos = new ArrayList<Producto>();
-        ResultSet result = state.executeQuery("SELECT * FROM producto");
+        ArrayList<Producto> productos = new ArrayList<>();
+        ResultSet result = state.executeQuery("SELECT * FROM Producto");
         while(result.next()){
             Producto producto = new Producto();
             producto.setId((Integer) result.getObject(1));
