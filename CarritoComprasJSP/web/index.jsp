@@ -19,7 +19,7 @@
             
         </div>
         <div id="datos">
-        <form action="Comenzar" method="post">
+        <form action="" method="post">
             <table>
                 <tr>
                     <td></td>
