@@ -6,11 +6,45 @@ and open the template in the editor.
 -->
 <html>
     <head>
-        <title>TODO supply a title</title>
+        <title>Bienvenido a la PrebeTienda Online</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
     <body>
-        <div>TODO write content</div>
+        
+        <div id="primera">
+            <p>
+                Bienvenido a la PrebeTienda. Por favor ingrese sus datos personales para iniciar la compra
+            </p>
+            
+        </div>
+        <div id="datos">
+        <form action="Comenzar" method="post">
+            <table>
+                <tr>
+                    <td></td>
+                    <td><h4>Datos Personales</h4></td>
+                </tr>
+                <tr>
+                    <td>NOMBRE CLIENTE</td>
+                    <td><input type="text" name="nombreCliente"/></td>
+                </tr>
+                <tr>
+                    <td>RFC CLIENTE</td>
+                    <td><input type="text" name="rfc"/></td>
+                </tr>
+                <tr>
+                    <td>Dinero Disponible</td>
+                    <td><input type="text" name="dinero"/></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td><input type="submit" value="Terminar Compra"/></td>
+                </tr>
+            </table>
+        </form>
+        </div>
+        
+        
     </body>
 </html>
