@@ -5,10 +5,20 @@
  */
 package datos;
 
+import java.sql.*;
+import java.util.ArrayList;
+import modelo.Producto;
+
 /**
  *
  * @author -Angel
  */
 public class Conexion {
     
+    private Connection conn;
+    private Statement state;
+    
+    public Conexion(){
+        
+    }
 }
