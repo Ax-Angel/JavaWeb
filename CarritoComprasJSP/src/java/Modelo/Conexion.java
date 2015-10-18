@@ -21,6 +21,21 @@ public class Conexion {
     //El usuario de la base de datos
     private static String user = "root";
     //La clave del usuario de la base de datos
-    private static String password = "clave";
+    private static String password = "";
     //Metodo para obtener la conexion con la base de datos
+    public static synchronized Connection getConexion() {
+        Connection cn = null;
+        try {
+            //Cargamos el driver y le decimos que vamos a usar
+            //una conexion con mysql
+            Class.forName("com.mysql.jdbc.Driver");
+            //Obtenemos la conexion
+            cn = DriverManager.getConnection(url, user, password);
+        } catch (Exception e) {
+            cn = null;
+        } finally {
+            return cn;
+        }
+    }
+    
 }
