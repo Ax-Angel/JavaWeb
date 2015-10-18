@@ -17,4 +17,10 @@ import java.util.ArrayList;
  */
 public class ProductoBD {
     
+    //Metodo utilizado para insertar un Producto a nuestra Base de datos
+
+    public static synchronized boolean insertarProducto(Producto varproducto) {
+        Connection cn = null;
+        CallableStatement cl = null;
+        boolean rpta = false;
 }
