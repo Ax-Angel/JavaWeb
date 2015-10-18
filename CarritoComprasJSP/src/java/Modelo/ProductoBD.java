@@ -64,4 +64,5 @@ public class ProductoBD {
             Conexion.cerrarConexion(cn);
         }
         return rpta;
+    }
 }
