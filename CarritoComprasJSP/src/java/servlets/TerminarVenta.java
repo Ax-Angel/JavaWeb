@@ -20,8 +20,8 @@ import modelo.Producto;
  *
  * @author -Angel
  */
-@WebServlet(name = "AgregarProducto", urlPatterns = {"/AgregarProducto"})
-public class AgregarProducto extends HttpServlet {
+@WebServlet(name = "TerminarVenta", urlPatterns = {"/TerminarVenta"})
+public class TerminarVenta extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -41,29 +41,53 @@ public class AgregarProducto extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Agregando...</title>");            
+            out.println("<title>Boleta Detalle</title>");            
             out.println("</head>");
             out.println("<body>");
             
-            String nombre = request.getParameter("nombre");
-            int id = Integer.valueOf(request.getParameter("id"));
-            String tipo = request.getParameter("tipo");
-            int precio = Integer.valueOf(request.getParameter("precio"));
-            Producto producto = new Producto();
-            producto.setId(id);
-            producto.setNombre(nombre);
-            producto.setTipo(tipo);
-            producto.setPrecio(precio);
-                    
-            Cliente.productos.add(producto);
+            String nombre = request.getParameter("nombreCliente");
+            String rut = request.getParameter("rut");
             
-            response.sendRedirect("index.jsp");
+            Cliente cliente = new Cliente();
+            cliente.setNombre(nombre);
+            cliente.setRut(rut);
+            
+            out.print("<table>");
+            out.print("<tr>");
+            out.print("<td><h1>DETALLE DE LA BOLETA</h1></td>");
+            out.print("</tr>");
+            out.print("</table>");
+            
+            
+            for(Producto producto: Cliente.productos){
+                out.print("<table>");
+                out.print("<tr>");
+                out.print("<td>Id Producto: "+producto.getId()+"</td>");
+                out.print("</tr>");
+                out.print("<tr>");
+                out.print("<td>Nombre Producto: "+producto.getNombre()+"</td>");
+                out.print("</tr>");
+                out.print("<tr>");
+                out.print("<td>Tipo Producto: "+producto.getTipo()+"</td>");
+                out.print("</tr>");
+                out.print("<tr>");
+                out.print("<td>Precio Producto: $"+producto.getPrecio()+"</td>");
+                out.print("</tr>");
+                out.print("</table>");
+                out.print("<br/><br/>");
+            }
+            
+                out.print("<table>");
+                out.print("<tr>");
+                out.print("<td>Nombre Cliente: "+cliente.getNombre()+"</td>");
+                out.print("</tr>");
+                out.print("<tr>");
+                out.print("<td>Rut Cliente: "+cliente.getRut()+"</td>");
+                out.print("</tr>");
+                out.print("</table>");
             
         }catch(Exception e){
-                out.print("<script type=text/javascript>");
-                out.print("alert('NO SE PUDO AGREGAR EL PRODUCTO A SU LISTA');");
-                out.print("location.href='index.jsp';");
-                out.print("</script>");
+            
         }finally {
             out.println("</body>");
             out.println("</html>");
