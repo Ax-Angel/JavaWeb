@@ -10,6 +10,12 @@ package Modelo;
  *
  * @author -Angel
  */
+
+import java.sql.CallableStatement;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+
 public class Conexion {
     
 }
