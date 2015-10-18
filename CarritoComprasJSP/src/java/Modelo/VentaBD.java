@@ -85,4 +85,45 @@ public class VentaBD {
     public static synchronized ArrayList<DetalleVenta> obtenerVentas() {
         //El array que contendra todos nuestros productos
         ArrayList<DetalleVenta> lista = new ArrayList<DetalleVenta>();
+        Connection cn = null;
+        CallableStatement cl = null;
+        ResultSet rs = null;
+        try {
+            //Nombre del procedimiento almacenado
+            String call = "{CALL spF_venta_All()}";
+cn = Conexion.getConexion();
+            cl = cn.prepareCall(call);
+            //La sentencia lo almacenamos en un resulset
+            rs = cl.executeQuery();
+            //Consultamos si hay datos para recorrerlo
+            //e insertarlo en nuestro array
+            while (rs.next()) {
+                Venta ven=new Venta();
+                Producto pro=new Producto();
+                DetalleVenta det=new DetalleVenta();
+                ven.setCodigoVenta(rs.getInt("CodigoVenta"));
+                ven.setCliente(rs.getString("Cliente"));
+                ven.setFecha(rs.getTimestamp("Fecha"));
+                pro.setCodigoProducto(rs.getInt("CodigoProducto"));
+                pro.setNombre(rs.getString("Nombre"));
+                pro.setPrecio(rs.getDouble("Precio"));
+                det.setCantidad(rs.getDouble("Cantidad"));
+                det.setDescuento(rs.getDouble("Parcial"));
+                det.setVenta(ven);
+                det.setProducto(pro);
+                lista.add(det);
+            }
+            Conexion.cerrarCall(cl);
+            Conexion.cerrarConexion(cn);
+        } catch (SQLException e) {
+            e.printStackTrace();
+            Conexion.cerrarCall(cl);
+            Conexion.cerrarConexion(cn);
+        } catch (Exception e) {
+            e.printStackTrace();
+            Conexion.cerrarCall(cl);
+            Conexion.cerrarConexion(cn);
+        }
+        return lista;
+    }
 }
