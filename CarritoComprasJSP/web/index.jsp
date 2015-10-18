@@ -1,7 +1,7 @@
 <%-- 
     Document   : index
-    Created on : 06-02-2015, 02:12:32 AM
-    Author     : Seba
+    Created on : 18-10-2015, 05:03:15 PM
+    Author     : -Angel
 --%>
 
 <%@page import="servlets.BuscarProducto"%>
@@ -78,7 +78,7 @@
                     <td><input type="text" name="nombreCliente"/></td>
                 </tr>
                 <tr>
-                    <td>RUT CLIENTE</td>
+                    <td>RFC CLIENTE</td>
                     <td><input type="text" name="rut"/></td>
                 </tr>
                 <tr>

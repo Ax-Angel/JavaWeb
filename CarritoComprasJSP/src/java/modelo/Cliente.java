@@ -11,7 +11,7 @@ import modelo.Producto;
 
 /**
  *
- * @author Seba
+ * @author -Angel
  */
 public class Cliente {
     
