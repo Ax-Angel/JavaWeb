@@ -41,7 +41,7 @@ public class TerminarVenta extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Boleta Detalle</title>");            
+            out.println("<title>Detalle de Venta</title>");            
             out.println("</head>");
             out.println("<body>");
             
@@ -54,7 +54,7 @@ public class TerminarVenta extends HttpServlet {
             
             out.print("<table>");
             out.print("<tr>");
-            out.print("<td><h1>DETALLE DE LA BOLETA</h1></td>");
+            out.print("<td><h1>DETALLE DE VENTA</h1></td>");
             out.print("</tr>");
             out.print("</table>");
             
@@ -82,7 +82,7 @@ public class TerminarVenta extends HttpServlet {
                 out.print("<td>Nombre Cliente: "+cliente.getNombre()+"</td>");
                 out.print("</tr>");
                 out.print("<tr>");
-                out.print("<td>Rut Cliente: "+cliente.getRut()+"</td>");
+                out.print("<td>RFC Cliente: "+cliente.getRut()+"</td>");
                 out.print("</tr>");
                 out.print("</table>");
             

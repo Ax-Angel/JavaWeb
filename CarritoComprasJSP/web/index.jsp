@@ -1,6 +1,6 @@
 <%-- 
     Document   : index
-    Created on : 18-10-2015, 05:03:15 PM
+    Created on : 06-02-2015, 05:03:22 AM
     Author     : -Angel
 --%>
 
@@ -13,7 +13,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Simulacion Carrito Compra</title>
+        <title>PrebePagina de compras</title>
     </head>
     <body>
         

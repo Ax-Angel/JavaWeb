@@ -7,7 +7,6 @@
 package modelo;
 
 import java.util.ArrayList;
-import modelo.Producto;
 
 /**
  *
