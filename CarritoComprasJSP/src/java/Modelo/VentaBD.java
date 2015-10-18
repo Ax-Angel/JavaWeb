@@ -17,5 +17,12 @@ import java.util.ArrayList;
  * @author -Angel
  */
 public class VentaBD {
-    
+     //Metodo utilizado para insertar una Venta a nuestra Base de datos
+    public static synchronized boolean insertarVenta(Venta varventa, ArrayList<DetalleVenta> detalle) {
+
+        Connection cn = null;
+        CallableStatement cl = null;
+        boolean rpta = false;
+        
+        
 }
