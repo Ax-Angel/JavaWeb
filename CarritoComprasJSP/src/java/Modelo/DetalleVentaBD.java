@@ -25,4 +25,14 @@ public class DetalleVentaBD {
             //Nombre del procedimiento almacenado y como espera tres parametros
             //le ponemos 3 interrogantes
             String call = "{CALL spI_detalleventa(?,?,?,?)}";
+            //Preparamos la sentecia
+            cl = cn.prepareCall(call);
+            //Codigo de la venta
+            cl.setInt(1, varDetalle.getCodigoVenta());
+            //Codigo del producto
+            cl.setInt(2, varDetalle.getCodigoProducto());
+            //La cantidad
+            cl.setDouble(3, varDetalle.getCantidad());
+            //El descuento
+            cl.setDouble(4, varDetalle.getDescuento());
 }
