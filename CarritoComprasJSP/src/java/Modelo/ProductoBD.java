@@ -50,4 +50,18 @@ public class ProductoBD {
                 //Negamos la transaccion
                 Conexion.deshacerCambios(cn);
             }
+             Conexion.cerrarCall(cl);
+            Conexion.cerrarConexion(cn);
+        } catch (SQLException e) {
+            e.printStackTrace();
+            Conexion.deshacerCambios(cn);
+            Conexion.cerrarCall(cl);
+            Conexion.cerrarConexion(cn);
+        } catch (Exception e) {
+            e.printStackTrace();
+            Conexion.deshacerCambios(cn);
+            Conexion.cerrarCall(cl);
+            Conexion.cerrarConexion(cn);
+        }
+        return rpta;
 }
